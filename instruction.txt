@@ -1,0 +1,6 @@
+Tip: It’s good practice to keep a copy of the raw data you are using to extract the data you need.
+
+By appending a date or time stamp to the file name, you can ensure it’s name is unique.
+This builds a history of the weather forecasts which you can revisit at any time to recover from errors or expand the scope of your reports
+Using the prescribed date format ensures that when you sort the files, they will be sorted chronologically. It also enables searching for the report for any given date.
+If needed, you can compress and archive the files periodically. You can even automate this process by scheduling it.

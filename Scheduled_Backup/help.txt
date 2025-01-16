@@ -1,0 +1,64 @@
+Task #1
+
+Great! This script snippet checks if the number of arguments passed to the script is not equal to 2. If the condition is true, it prints a usage message and exits the script. This is a good way to ensure that the user provides the correct number of arguments.
+
+Here's a complete example of a backup script that uses this logic:
+
+```bash
+#!/bin/bash
+
+# Check if the number of arguments is not equal to 2
+if [[ $# != 2 ]]
+then
+  echo "Usage: backup.sh target_directory_name destination_directory_name"
+  exit 1
+fi
+
+# Assign arguments to variables
+TARGET_DIR=$1
+DEST_DIR=$2
+
+# Create a backup
+cp -r "$TARGET_DIR" "$DEST_DIR"
+
+# Print a success message
+echo "Backup of $TARGET_DIR completed successfully to $DEST_DIR"
+```
+
+This script will copy the contents of the target directory to the destination directory. Make sure to give the script execute permissions with `chmod +x backup.sh` before running it.
+
+Is there anything specific you need help with in this script?
+
+----------------------------------
+
+Absolutely! In shell scripting, `$1` and `$2` are positional 
+parameters that represent the first and second command line arguments 
+passed to the script, respectively. For example, if you run a script like this:
+
+```bash
+./script.sh arg1 arg2
+```
+
+Inside `script.sh`, `$1` will be `arg1` and `$2` will be `arg2`. This allows you to handle input dynamically based on the arguments provided when the script is executed. If you need more arguments, you can access them using `$3`, `$4`, and so on. 
+
+Is there a specific script you're working on that you need help with?
+
+-------------------------
+task 12
+
+tar -czvf $backupFileName ${toBackup[@]}
+This command creates a compressed tarball (a .tar.gz file) containing all the items listed in the toBackup array. Here's a breakdown of the command:
+
+tar: The command to create and manipulate tar archives.
+
+-c: Create a new archive.
+
+-z: Compress the archive using gzip.
+
+-v: Verbosely list files processed (optional, but useful for seeing what's happening).
+
+-f $backupFileName: Specify the name of the archive file to create, where $backupFileName is the variable containing the desired file name.
+
+${toBackup[@]}: Expand the array toBackup to include all its elements in the command.
+
+Here's how you can incorporate this into your script:
